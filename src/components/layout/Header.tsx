@@ -10,17 +10,17 @@ const Header = () => {
 
       {/* Nav links in the center */}
       <nav className="flex space-x-6">
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Accueil</a>
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Garderie à Mirabel</a>
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Notre Équipe</a>
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Avantages</a>
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Activités récentes</a>
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Inscription</a>
-        <a href="#" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors">Tarifs</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Accueil</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Garderie à Mirabel</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Notre Équipe</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Avantages</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Activités récentes</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Inscription</a>
+        <a href="#" className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors">Tarifs</a>
       </nav>
 
       {/* Contact button on the right */}
-      <button className="bg-[var(--color-primary)] text-[var(--color-text-light)] px-6 py-2 rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors">
+      <button className="bg-[var(--color-primary)] text-[var(--color-text)] px-6 py-2 rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors">
         Contact
       </button>
     </header>
