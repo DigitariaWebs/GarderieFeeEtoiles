@@ -77,7 +77,7 @@ const TarifsSections: React.FC = () => {
             </div>
             <div className="mb-6">
               <div className="text-4xl font-bold text-[var(--color-primary)] mb-2">
-                59 $
+                 59 $
               </div>
               <div className="text-sm text-[var(--color-text-secondary)] uppercase tracking-wide">
                 par jour

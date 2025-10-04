@@ -51,7 +51,7 @@ const RecentActivitySection: React.FC = () => {
     <section
       id="recent-activities"
       aria-labelledby="recent-activities"
-      className="pb-16 sm:pb-20 lg:pb-24 bg-[var(--color-background)]"
+      className="pb-5 bg-[var(--color-background)]"
     >
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
@@ -59,13 +59,13 @@ const RecentActivitySection: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative min-h-[40vh] pt-6 flex items-center justify-center"
+          className="relative min-h-[30vh] md:min-h-[40vh] pt-12 md:pt-6 flex items-center justify-center"
         >
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold text-[var(--color-primary)] mb-6  ">
+            <h2 className="text-5xl md:text-6xl font-bold text-[var(--color-primary)] mb-8 md:mb-6  ">
               Activités Récentes
             </h2>
-            <p className="text-2xl md:text-3xl text-[var(--color-text)] font-medium">
+            <p className="text-xl md:text-3xl text-[var(--color-text)] font-medium">
               Découvrez nos dernières nouvelles et événements
             </p>
           </div>
@@ -81,40 +81,17 @@ const RecentActivitySection: React.FC = () => {
             <motion.div
               key={activity.id}
               variants={cardVariants}
-              className="py-10 px-6"
+              className="py-8 md:py-10 px-6"
             >
               <div
-                className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center ${
+                className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
                   index % 2 === 1 ? "md:grid-flow-col-dense" : ""
                 }`}
               >
-                <div
-                  className={`flex flex-col justify-between h-80 md:h-[430px] ${
-                    index % 2 === 1 ? "md:col-start-2" : ""
-                  }`}
-                >
-                  <div>
-                    <h3 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-6">
-                      {activity.title}
-                    </h3>
-                    <div className="w-24 h-1 bg-[var(--color-secondary)]"></div>
-                  </div>
-
-                  <p className="text-xl text-[var(--color-text)] leading-relaxed">
-                    {activity.body}
-                  </p>
-
-                  <div className="bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-primary)]/10 p-6 rounded-xl border-l-4 border-[var(--color-primary)]">
-                    <p className="text-lg italic text-[var(--color-secondary)] font-medium">
-                      &ldquo;{activity.cta}&rdquo;
-                    </p>
-                  </div>
-                </div>
-
                 {/* Activity image */}
                 <div
-                  className={`relative h-80 md:h-[430px] rounded-2xl overflow-hidden ${
-                    index % 2 === 1 ? "md:col-start-1" : ""
+                  className={`relative h-64 md:h-[430px] rounded-2xl overflow-hidden ${
+                    index % 2 === 1 ? "md:col-start-2" : "md:col-start-1"
                   }`}
                 >
                   <Image
@@ -124,6 +101,29 @@ const RecentActivitySection: React.FC = () => {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
+                </div>
+
+                <div
+                  className={`flex flex-col justify-between min-h-64 md:h-[430px] ${
+                    index % 2 === 1 ? "md:col-start-1" : "md:col-start-2"
+                  }`}
+                >
+                  <div>
+                    <h3 className="text-3xl md:text-5xl font-bold text-[var(--color-primary)] mb-6">
+                      {activity.title}
+                    </h3>
+                    <div className="w-24 h-1 bg-[var(--color-secondary)] mb-4"></div>
+                  </div>
+
+                  <p className="text-lg md:text-xl text-[var(--color-text)] leading-relaxed mb-8">
+                    {activity.body}
+                  </p>
+
+                  <div className="bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-primary)]/10 p-6 rounded-xl border-l-4 border-[var(--color-primary)]">
+                    <p className="text-lg italic text-[var(--color-secondary)] font-medium">
+                      &ldquo;{activity.cta}&rdquo;
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

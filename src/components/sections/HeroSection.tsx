@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
   }, [heroSectionImages.length]);
 
   return (
-    <section className="pt-32 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+    <section className="pt-16 md:pt-32 pb-16 md:pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
               Garderie la fée des étoiles
             </h1>
             <p
-              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
               style={{ fontFamily: "Hubot Sans, Inter, sans-serif" }}
             >
               Bienvenue à la Garderie la fée des étoiles, votre garderie de
@@ -88,7 +88,7 @@ const HeroSection: React.FC = () => {
             className="relative"
           >
             {/* Main Gallery Container */}
-            <div className="relative h-96 rounded-3xl overflow-hidden">
+            <div className="relative h-72 md:h-96 rounded-3xl overflow-hidden">
               {/* Layered Images with Creative Transitions */}
               <div className="absolute inset-0">
                 {heroSectionImages.map((image, index) => {
@@ -98,7 +98,8 @@ const HeroSection: React.FC = () => {
                     (currentImageIndex - 1 + heroSectionImages.length) %
                       heroSectionImages.length;
                   const isNext =
-                    index === (currentImageIndex + 1) % heroSectionImages.length;
+                    index ===
+                    (currentImageIndex + 1) % heroSectionImages.length;
 
                   return (
                     <motion.div
@@ -191,7 +192,8 @@ const HeroSection: React.FC = () => {
                   onClick={() =>
                     setCurrentImageIndex(
                       (prev) =>
-                        (prev - 1 + heroSectionImages.length) % heroSectionImages.length
+                        (prev - 1 + heroSectionImages.length) %
+                        heroSectionImages.length
                     )
                   }
                 >

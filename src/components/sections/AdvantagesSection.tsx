@@ -127,14 +127,14 @@ const AdvantagesSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex justify-center gap-8"
+          className="grid grid-cols-1 md:flex md:justify-center gap-8"
         >
           {advantages.slice(3, 5).map((advantage) => (
             <motion.div
               key={advantage.id}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-[var(--color-background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-1/3 flex flex-col"
+              className="bg-[var(--color-background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full md:w-1/3 flex flex-col"
             >
               {/* Advantage Image */}
               <div className="relative h-48 w-full">

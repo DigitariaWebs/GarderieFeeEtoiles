@@ -52,7 +52,10 @@ const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="pb-20 bg-[var(--color-background)] scroll-m-15">
+    <section
+      id="faq"
+      className="pb-20 bg-[var(--color-background)] scroll-m-15"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column - Title & Contact Card */}
@@ -64,7 +67,7 @@ const FaqSection: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">
                   <span className="text-[var(--color-primary)]">Questions</span>
                   <br />
                   <span className="text-[var(--color-primary)]">and </span>
@@ -72,7 +75,7 @@ const FaqSection: React.FC = () => {
                     answers
                   </span>
                 </h2>
-                <p className="text-[var(--color-text)] text-lg">
+                <p className="text-[var(--color-text)] text-base md:text-lg">
                   {faqData.subtitle}
                 </p>
               </motion.div>
@@ -83,11 +86,11 @@ const FaqSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-[var(--color-background)] rounded-3xl p-8 shadow-lg"
+                className="bg-[var(--color-background)] rounded-3xl p-4 md:p-8 shadow-lg"
               >
-                <div className="flex items-center gap-6">
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-32 rounded-2xl flex items-center justify-center p-4 bg-[var(--color-background)]">
+                    <div className="w-20 md:w-32 rounded-2xl flex items-center justify-center p-4 bg-[var(--color-background)]">
                       <Image
                         src="/Logo.png"
                         alt="Garderie Fee Etoiles Logo"
@@ -134,7 +137,7 @@ const FaqSection: React.FC = () => {
 
           {/* Right Column - FAQ Items */}
           <div className="lg:col-span-7">
-            <div className="space-y-4 max-h-[450px] overflow-y-auto border-4 border-[var(--color-primary)] rounded-2xl p-4">
+            <div className="space-y-4 max-h-[300px] md:max-h-[450px] overflow-y-auto border-4 border-[var(--color-primary)] rounded-2xl p-4">
               {faqData.items.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -150,7 +153,7 @@ const FaqSection: React.FC = () => {
                     }
                     className="w-full text-left p-6 flex justify-between items-center hover:bg-[var(--color-background)] transition-colors"
                   >
-                    <h3 className="text-base md:text-lg font-semibold text-[var(--color-secondary)] pr-8">
+                    <h3 className="text-sm md:text-lg font-semibold text-[var(--color-secondary)] pr-8">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">
@@ -169,7 +172,7 @@ const FaqSection: React.FC = () => {
                   </button>
                   {openFaqIndex === index && (
                     <div className="px-6 pb-6">
-                      <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm md:text-base text-justify">
+                      <p className="text-[var(--color-text-secondary)] leading-relaxed text-xs md:text-base text-justify">
                         {faq.answer}
                       </p>
                     </div>
