@@ -119,7 +119,7 @@ const RecentActivitySection: React.FC = () => {
                 >
                   <Image
                     src={activity.image}
-                    alt={`${activity.title} - Garderie Fée Étoiles`}
+                    alt={`${activity.title} - Garderie la fée des étoiles`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"

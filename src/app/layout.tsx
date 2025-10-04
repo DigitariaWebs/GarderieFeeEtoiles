@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Garderie Fée Étoiles - Accueil et Éducation pour Enfants",
+  title: "Garderie la fée des étoiles - Accueil et Éducation pour Enfants",
   description:
-    "Bienvenue à la Garderie Fée Étoiles, votre garderie de confiance à Mirabel. Nous offrons un environnement sécurisant et stimulant pour vos enfants, avec une équipe dévouée et des activités enrichissantes.",
+    "Bienvenue à la Garderie la fée des étoiles, votre garderie de confiance à Mirabel. Nous offrons un environnement sécurisant et stimulant pour vos enfants, avec une équipe dévouée et des activités enrichissantes.",
   icons: {
     icon: "/Logo.png",
   },

@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex items-center">
         <Image
           src="/Logo.png"
-          alt="Garderie Fée Étoiles"
+          alt="Garderie la fée des étoiles"
           width={448}
           height={448}
           className="h-12 w-auto"
