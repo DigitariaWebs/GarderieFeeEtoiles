@@ -96,7 +96,7 @@ const ServiceSection: React.FC = () => {
               key={service.id}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-[var(--color-background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="bg-[var(--color-background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               {/* Service Image */}
               <div className="relative h-48 w-full">
@@ -134,7 +134,7 @@ const ServiceSection: React.FC = () => {
               key={service.id}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-[var(--color-background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-1/3"
+              className="bg-[var(--color-background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-1/3"
             >
               {/* Service Image */}
               <div className="relative h-48 w-full">
