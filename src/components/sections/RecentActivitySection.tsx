@@ -49,6 +49,7 @@ const RecentActivitySection: React.FC = () => {
 
   return (
     <section
+      id="recent-activities"
       aria-labelledby="recent-activities"
       className="pb-16 sm:pb-20 lg:pb-24 bg-[var(--color-background)]"
     >
