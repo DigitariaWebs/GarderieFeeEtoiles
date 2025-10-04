@@ -77,7 +77,7 @@ const TarifsSections: React.FC = () => {
             </div>
             <div className="mb-6">
               <div className="text-4xl font-bold text-[var(--color-primary)] mb-2">
-                43 $
+                59 $
               </div>
               <div className="text-sm text-[var(--color-text-secondary)] uppercase tracking-wide">
                 par jour
@@ -114,7 +114,7 @@ const TarifsSections: React.FC = () => {
           >
             <div className="mb-6">
               <div className="text-4xl font-bold text-[var(--color-primary)] mb-2">
-                41 $
+                56 $
               </div>
               <div className="text-sm text-[var(--color-text-secondary)] uppercase tracking-wide">
                 par jour
@@ -155,7 +155,7 @@ const TarifsSections: React.FC = () => {
               Informations Importantes
             </h4>
             <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
-              Les tarifs sont sujets à changement. Pour les tarifs exacts et les options de paiement,
+              <strong>Capacité maximale autorisée : 74 places.</strong> Les tarifs sont sujets à changement. Pour les tarifs exacts et les options de paiement,
               veuillez nous contacter directement. Nous offrons également des places subventionnées
               dans certains cas.
             </p>
