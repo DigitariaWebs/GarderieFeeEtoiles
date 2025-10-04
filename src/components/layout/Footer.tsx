@@ -51,30 +51,30 @@ const Footer: React.FC = () => {
               <p>
                 <span className="font-medium">Adresse: </span>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=123+Rue+des+Étoiles+Montréal+QC+H1A+1A1"
+                  href="https://www.google.com/maps/search/?api=1&query=10010+Boulevard+St-Canut+Mirabel+Québec+J7N+1K6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
                 >
-                  123 Rue des Étoiles, Montréal, QC H1A 1A1
+                  10010 Boulevard St-Canut, Mirabel, Québec, J7N 1K6
                 </a>
               </p>
               <p>
                 <span className="font-medium">Téléphone: </span>
                 <a
-                  href="tel:+15141234567"
+                  href="tel:5149129499"
                   className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
                 >
-                  +1 514 123 4567
+                  (514) 912-9499
                 </a>
               </p>
               <p>
                 <span className="font-medium">Email: </span>
                 <a
-                  href="mailto:contact@garderiefeeetoiles.com"
+                  href="mailto:infos@lafeedesetoiles.com"
                   className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
                 >
-                  contact@garderiefeeetoiles.com
+                  infos@lafeedesetoiles.com
                 </a>
               </p>
             </div>

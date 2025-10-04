@@ -52,7 +52,7 @@ const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-[var(--color-background)] scroll-m-15">
+    <section id="faq" className="pb-20 bg-[var(--color-background)] scroll-m-15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column - Title & Contact Card */}
@@ -100,7 +100,7 @@ const FaqSection: React.FC = () => {
                   <div className="flex-1">
                     <div className="space-y-3">
                       <a
-                        href="mailto:contact@garderiefeeetoiles.com"
+                        href="mailto:infos@lafeedesetoiles.com"
                         className="flex items-center gap-4 p-4 rounded-2xl ring-1 ring-black/5 bg-[var(--color-background)] transition-all hover:-translate-y-0.5 shadow-lg"
                       >
                         <div>
@@ -108,12 +108,12 @@ const FaqSection: React.FC = () => {
                             Email
                           </h4>
                           <p className="text-[var(--color-text-secondary)]">
-                            contact@garderiefeeetoiles.com
+                            infos@lafeedesetoiles.com
                           </p>
                         </div>
                       </a>
                       <a
-                        href="tel:+15141234567"
+                        href="tel:5149129499"
                         className="flex items-center gap-4 p-4 rounded-2xl ring-1 ring-black/5 bg-[var(--color-background)] transition-all hover:-translate-y-0.5 shadow-lg"
                       >
                         <div>
@@ -121,7 +121,7 @@ const FaqSection: React.FC = () => {
                             Téléphone
                           </h4>
                           <p className="text-[var(--color-text-secondary)]">
-                            +1 514 123 4567
+                            (514) 912-9499
                           </p>
                         </div>
                       </a>

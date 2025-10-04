@@ -36,7 +36,7 @@ const Header = () => {
           Avantages
         </Link>
         <Link
-          href="#"
+          href="#tarifs"
           className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
         >
           Tarifs
