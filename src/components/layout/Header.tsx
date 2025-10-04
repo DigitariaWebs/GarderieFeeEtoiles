@@ -30,10 +30,10 @@ const Header = () => {
           Activités récentes
         </Link>
         <Link
-          href="/#services"
+          href="/#advantages"
           className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
         >
-          Services
+          Avantages
         </Link>
         <Link
           href="#"

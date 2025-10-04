@@ -10,19 +10,19 @@ const RecentActivitySection: React.FC = () => {
       id: 1,
       title: "Portes ouvertes de la Fée des Étoiles",
       meta: "Samedi 2 décembre 2017 • 10010 boulevard Saint-Canut",
-      body: "La garderie La Fée des Étoiles vous ouvre ses portes samedi 2 décembre 2017 au 10010 boulevard Saint-Canut. Venez découvrir nos installations et rencontrer notre équipe dévouée dans un environnement chaleureux.",
-      cta: "En savoir plus",
+      body: "Venez découvrir nos nouveaux locaux lors des portes ouvertes de la garderie la Fée des Étoiles. En présence des éducatrices, de la directrice et de la fée des étoiles elle-même, profitez de rafraîchissements, visites et présentations.",
+      cta: "La garderie la Fée des Étoiles vous ouvre ses portes samedi 2 décembre 2017 au 10010 boulevard St-Canut.",
       icon: "calendar",
-      image: "/RecentActivitySection/PortesOuvertes.png",
+      image: "/RecentActivitySection/PortesOuvertes.jpg",
     },
     {
       id: 2,
       title: "Le développement de votre enfant",
       meta: null,
-      body: "À la garderie « La Fée des Étoiles », chaque enfant est unique et se développe à son propre rythme. Notre équipe s'adapte aux besoins individuels, favorisant l'épanouissement à travers des activités ludiques et éducatives.",
-      cta: "Découvrir notre pédagogie",
+      body: "Nos éducatrices nourrissent les forces de chaque enfant et les encouragent à atteindre de nouveaux défis. Elles touchent à toutes les sphères développementales pour voir grandir un petit être autonome et stable, dans un environnement sécurisant et bienveillant.",
+      cta: 'À la garderie "la fée des étoiles", chaque enfant est unique et se développe à son propre rythme.',
       icon: "sparkles",
-      image: "/RecentActivitySection/DeveloppementEnfant.png",
+      image: "/RecentActivitySection/DeveloppementEnfant.jpg",
     },
   ];
 
@@ -89,7 +89,7 @@ const RecentActivitySection: React.FC = () => {
                 }`}
               >
                 <div
-                  className={`flex flex-col justify-between h-80 md:h-[400px] ${
+                  className={`flex flex-col justify-between h-80 md:h-[430px] ${
                     index % 2 === 1 ? "md:col-start-2" : ""
                   }`}
                 >
@@ -113,7 +113,7 @@ const RecentActivitySection: React.FC = () => {
 
                 {/* Activity image */}
                 <div
-                  className={`relative h-80 md:h-[400px] rounded-2xl overflow-hidden ${
+                  className={`relative h-80 md:h-[430px] rounded-2xl overflow-hidden ${
                     index % 2 === 1 ? "md:col-start-1" : ""
                   }`}
                 >
