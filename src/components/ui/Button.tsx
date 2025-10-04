@@ -23,9 +23,9 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
   
   const variantClasses = {
-    primary: 'bg-[var(--color-primary)] text-[var(--color-text)] hover:bg-[var(--color-primary-hover)] focus:ring-[var(--color-primary)]',
-    secondary: 'bg-[var(--color-secondary)] text-[var(--color-text)] hover:bg-[var(--color-secondary-hover)] focus:ring-[var(--color-secondary)]',
-    outline: 'border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-text)] focus:ring-[var(--color-primary)]',
+    primary: 'bg-[var(--color-primary)] text-[var(--color-text-light)] hover:bg-[var(--color-primary-hover)] focus:ring-[var(--color-primary)]',
+    secondary: 'bg-[var(--color-secondary)] text-[var(--color-text-light)] hover:bg-[var(--color-secondary-hover)] focus:ring-[var(--color-secondary)]',
+    outline: 'border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-text-light)] focus:ring-[var(--color-primary)]',
   };
 
   const sizeClasses = {

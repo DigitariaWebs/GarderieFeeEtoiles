@@ -171,7 +171,7 @@ const HeroSection: React.FC = () => {
             <Button
               size="lg"
               variant="outline"
-              className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-text)] text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-black backdrop-blur-sm bg-[var(--color-text)]/10"
+              className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-text-light)] text-[var(--color-text-light)] hover:bg-[var(--color-text-light)] hover:text-black backdrop-blur-sm bg-[var(--color-text-light)]/10"
             >
               Découvrez nos services
             </Button>

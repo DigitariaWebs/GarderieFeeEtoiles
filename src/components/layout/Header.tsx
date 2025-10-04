@@ -20,7 +20,7 @@ const Header = () => {
       </nav>
 
       {/* Contact button on the right */}
-      <button className="bg-[var(--color-primary)] text-[var(--color-text)] px-6 py-2 rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors">
+      <button className="bg-[var(--color-primary)] text-[var(--color-text-light)] px-6 py-2 rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors">
         Contact
       </button>
     </header>

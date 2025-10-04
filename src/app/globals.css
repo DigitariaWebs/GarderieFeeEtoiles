@@ -10,18 +10,23 @@
   --color-secondary-hover: #55267a;
   
   /* Background Colors */
-  --color-background: #FFFFFF;
+  --color-background: #fff7f0;
   --color-background-secondary: #050304;
   --color-background-tertiary: #663090;
   
   /* Text Colors */
-  --color-text: #FFFFFF;
-  --color-text-dark: #0F1215;
+  --color-text: #0F1215;
+  --color-text-light: #FFFFFF;
   
 }
 
 body {
   background-color: var(--color-background);
+    /* Subtle warm background with gentle radial tints */
+    background:
+      radial-gradient(1200px 600px at -10% -10%, color-mix(in oklab, var(--color-peach) 16%, white) 0%, transparent 60%),
+      radial-gradient(900px 500px at 110% -10%, color-mix(in oklab, var(--color-mint) 12%, white) 0%, transparent 60%),
+      linear-gradient(180deg, var(--color-background) 0%, #fffaf4 70%);
   color: var(--color-text);
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
