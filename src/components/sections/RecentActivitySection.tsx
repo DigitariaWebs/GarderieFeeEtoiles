@@ -55,7 +55,12 @@ const RecentActivitySection: React.FC = () => {
     >
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
-        <div className="relative min-h-[40vh] pt-6 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative min-h-[40vh] pt-6 flex items-center justify-center"
+        >
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold text-[var(--color-primary)] mb-6  ">
               Activités Récentes
@@ -64,56 +69,66 @@ const RecentActivitySection: React.FC = () => {
               Découvrez nos dernières nouvelles et événements
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Content Sections */}
-        {activities.map((activity, index) => (
-          <div key={activity.id} className="py-10 px-6">
-            <div
-              className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "md:grid-flow-col-dense" : ""
-              }`}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {activities.map((activity, index) => (
+            <motion.div
+              key={activity.id}
+              variants={cardVariants}
+              className="py-10 px-6"
             >
               <div
-                className={`flex flex-col justify-between h-80 md:h-[400px] ${
-                  index % 2 === 1 ? "md:col-start-2" : ""
+                className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center ${
+                  index % 2 === 1 ? "md:grid-flow-col-dense" : ""
                 }`}
               >
-                <div>
-                  <h3 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-6">
-                    {activity.title}
-                  </h3>
-                  <div className="w-24 h-1 bg-[var(--color-secondary)]"></div>
-                </div>
+                <div
+                  className={`flex flex-col justify-between h-80 md:h-[400px] ${
+                    index % 2 === 1 ? "md:col-start-2" : ""
+                  }`}
+                >
+                  <div>
+                    <h3 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-6">
+                      {activity.title}
+                    </h3>
+                    <div className="w-24 h-1 bg-[var(--color-secondary)]"></div>
+                  </div>
 
-                <p className="text-xl text-[var(--color-text)] leading-relaxed">
-                  {activity.body}
-                </p>
-
-                <div className="bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-primary)]/10 p-6 rounded-xl border-l-4 border-[var(--color-primary)]">
-                  <p className="text-lg italic text-[var(--color-secondary)] font-medium">
-                    "{activity.cta}"
+                  <p className="text-xl text-[var(--color-text)] leading-relaxed">
+                    {activity.body}
                   </p>
+
+                  <div className="bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-primary)]/10 p-6 rounded-xl border-l-4 border-[var(--color-primary)]">
+                    <p className="text-lg italic text-[var(--color-secondary)] font-medium">
+                      &ldquo;{activity.cta}&rdquo;
+                    </p>
+                  </div>
+                </div>
+
+                {/* Activity image */}
+                <div
+                  className={`relative h-80 md:h-[400px] rounded-2xl overflow-hidden ${
+                    index % 2 === 1 ? "md:col-start-1" : ""
+                  }`}
+                >
+                  <Image
+                    src={activity.image}
+                    alt={`${activity.title} - Garderie Fée Étoiles`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
               </div>
-
-              {/* Activity image */}
-              <div
-                className={`relative h-80 md:h-[400px] rounded-2xl overflow-hidden ${
-                  index % 2 === 1 ? "md:col-start-1" : ""
-                }`}
-              >
-                <Image
-                  src={activity.image}
-                  alt={`${activity.title} - Garderie Fée Étoiles`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

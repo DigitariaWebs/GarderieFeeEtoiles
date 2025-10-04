@@ -1,49 +1,52 @@
 import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between py-4 px-12 bg-[var(--color-background)] shadow-lg">
       {/* Logo on the left */}
       <div className="flex items-center">
-        <img
-          src="/logo.png"
+        <Image
+          src="/Logo.png"
           alt="Garderie Fée Étoiles"
+          width={448}
+          height={448}
           className="h-12 w-auto"
         />
       </div>
 
-      {/* Nav links in the center */}
       <nav className="flex space-x-6">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
         >
           Accueil
-        </a>
-        <a
+        </Link>
+        <Link
           href="/#recent-activities"
           className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
         >
           Activités récentes
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/#services"
           className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
         >
           Services
-        </a>
-        <a
-          href="#"
-          className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
-        >
-          Notre Équipe
-        </a>
-        <a
+        </Link>
+        <Link
           href="#"
           className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
         >
           Tarifs
-        </a>
+        </Link>
+        <Link
+          href="/#faq"
+          className="text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
+        >
+          FAQ
+        </Link>
       </nav>
 
       {/* Contact and Inscription buttons on the right */}

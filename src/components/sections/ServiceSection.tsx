@@ -67,7 +67,7 @@ const ServiceSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="pb-16 sm:pb-20 lg:pb-24 bg-[var(--color-background)]"
+      className="pb-16 sm:pb-20 lg:pb-24 bg-[var(--color-background)] scroll-m-8"
     >
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
