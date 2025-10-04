@@ -1,3 +1,4 @@
+import FaqSection from "@/components/sections/FaqSection";
 import HeroSection from "@/components/sections/HeroSection";
 import RecentActivitySection from "@/components/sections/RecentActivitySection";
 import ServiceSection from "@/components/sections/ServiceSection";
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <RecentActivitySection />
       <ServiceSection />
+      <FaqSection />
     </div>
   );
 }
