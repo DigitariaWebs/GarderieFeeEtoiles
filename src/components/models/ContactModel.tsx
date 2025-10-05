@@ -101,11 +101,33 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      // For demo purposes, simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          details: formData.details,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue');
+      }
+
       setIsSubmitted(true);
-    } catch {
-      setApiError('Erreur de connexion. Vérifiez votre connexion internet et réessayez.');
+    } catch (error) {
+      if (error instanceof Error) {
+        setApiError(error.message);
+      } else {
+        setApiError('Erreur de connexion. Vérifiez votre connexion internet et réessayez.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -168,7 +190,8 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                   Contactez-nous
                 </h2>
                 <p className="mt-2 text-sm lg:text-base opacity-90">
-                  Nous sommes là pour répondre à vos questions sur notre garderie.
+                  Nous sommes là pour répondre à vos questions sur notre
+                  garderie.
                 </p>
               </div>
               <div className="text-xs lg:text-sm opacity-70">
@@ -195,19 +218,17 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                         damping: 15,
                       }}
                     >
-                      <CheckCircle2
-                        className="w-20 h-20 text-[var(--color-primary)]"
-                      />
+                      <CheckCircle2 className="w-16 h-16 md:w-20 md:h-20 text-[var(--color-primary)]" />
                     </motion.div>
-                    <h2 className="text-2xl font-bold text-gray-800 mt-5">
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-800 mt-5">
                       Message envoyé !
                     </h2>
-                    <p className="text-gray-500 mt-2">
+                    <p className="text-sm md:text-base text-gray-500 mt-2">
                       Merci. Nous reviendrons vers vous très prochainement.
                     </p>
                     <button
                       onClick={onClose}
-                      className="mt-6 bg-gray-100 text-gray-700 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                      className="mt-6 bg-gray-100 text-gray-700 px-4 sm:px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                     >
                       Fermer
                     </button>
@@ -235,7 +256,8 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                       </button>
                     </div>
                     <p className="text-sm sm:text-base text-gray-500 mb-4">
-                      Remplissez ce formulaire et nous vous contacterons rapidement.
+                      Remplissez ce formulaire et nous vous contacterons
+                      rapidement.
                     </p>
                     <motion.form
                       onSubmit={handleSubmit}
@@ -279,7 +301,9 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                           }`}
                         />
                         {errors.name && (
-                          <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.name}
+                          </p>
                         )}
                       </motion.div>
 
@@ -305,7 +329,9 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                           }`}
                         />
                         {errors.email && (
-                          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.email}
+                          </p>
                         )}
                       </motion.div>
 
@@ -331,7 +357,9 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                           }`}
                         />
                         {errors.phone && (
-                          <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.phone}
+                          </p>
                         )}
                       </motion.div>
 
@@ -357,13 +385,21 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                             Sélectionnez un sujet
                           </option>
                           <option value="Inscription">Inscription</option>
-                          <option value="Informations sur les tarifs">Informations sur les tarifs</option>
-                          <option value="Questions générales">Questions générales</option>
-                          <option value="Visite de la garderie">Visite de la garderie</option>
+                          <option value="Informations sur les tarifs">
+                            Informations sur les tarifs
+                          </option>
+                          <option value="Questions générales">
+                            Questions générales
+                          </option>
+                          <option value="Visite de la garderie">
+                            Visite de la garderie
+                          </option>
                           <option value="Autre">Autre</option>
                         </select>
                         {errors.service && (
-                          <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.service}
+                          </p>
                         )}
                       </motion.div>
 
@@ -401,7 +437,9 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose }) => {
                             background: "var(--color-primary)",
                           }}
                         >
-                          {isLoading ? "Envoi en cours..." : "Envoyer le message"}
+                          {isLoading
+                            ? "Envoi en cours..."
+                            : "Envoyer le message"}
                         </motion.button>
                       </motion.div>
                     </motion.form>

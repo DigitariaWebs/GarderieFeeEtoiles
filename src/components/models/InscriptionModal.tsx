@@ -157,13 +157,38 @@ const InscriptionModal: React.FC<InscriptionModalProps> = ({
     setIsLoading(true);
 
     try {
-      // For demo purposes, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch('/api/inscription', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          parentName: formData.parentName,
+          parentEmail: formData.parentEmail,
+          parentPhone: formData.parentPhone,
+          childName: formData.childName,
+          childBirthDate: formData.childBirthDate,
+          startDate: formData.startDate,
+          serviceType: formData.serviceType,
+          additionalInfo: formData.additionalInfo,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue');
+      }
+
       setIsSubmitted(true);
-    } catch {
-      setApiError(
-        "Erreur de connexion. Vérifiez votre connexion internet et réessayez."
-      );
+    } catch (error) {
+      if (error instanceof Error) {
+        setApiError(error.message);
+      } else {
+        setApiError(
+          "Erreur de connexion. Vérifiez votre connexion internet et réessayez."
+        );
+      }
     } finally {
       setIsLoading(false);
     }
@@ -249,7 +274,7 @@ const InscriptionModal: React.FC<InscriptionModalProps> = ({
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-start overflow-y-auto h-full">
+            <div className={`p-4 sm:p-6 md:p-8 flex flex-col ${isSubmitted ? 'justify-center' : 'justify-start'} overflow-y-auto h-full`}>
               <AnimatePresence>
                 {isSubmitted ? (
                   <motion.div
@@ -268,18 +293,18 @@ const InscriptionModal: React.FC<InscriptionModalProps> = ({
                         damping: 15,
                       }}
                     >
-                      <CheckCircle2 className="w-20 h-20 text-[var(--color-secondary)]" />
+                      <CheckCircle2 className="w-16 h-16 md:w-20 md:h-20 text-[var(--color-secondary)]" />
                     </motion.div>
-                    <h2 className="text-2xl font-bold text-gray-800 mt-5">
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-800 mt-5">
                       Demande d&apos;inscription reçue !
                     </h2>
-                    <p className="text-gray-500 mt-2">
+                    <p className="text-sm md:text-base text-gray-500 mt-2">
                       Merci pour votre intérêt. Nous vous contacterons sous peu
                       pour finaliser l&apos;inscription.
                     </p>
                     <button
                       onClick={onClose}
-                      className="mt-6 bg-gray-100 text-gray-700 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                      className="mt-6 bg-gray-100 text-gray-700 px-4 sm:px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                     >
                       Fermer
                     </button>
